@@ -3,7 +3,7 @@ using System.Text.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace GpuClient
+namespace OpenCL_RabbitMQ
 {
     class Program
     {
@@ -63,7 +63,7 @@ namespace GpuClient
                 int[] numbers;
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+                    numbers = [1, 2, 3, 4, 5, 6, 7, 8];
                     Console.WriteLine("Używam przykładowych danych: " + string.Join(", ", numbers));
                 }
                 else
@@ -77,7 +77,7 @@ namespace GpuClient
                     catch
                     {
                         Console.WriteLine("Nieprawidłowe dane, używam przykładu.");
-                        numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+                        numbers = [1, 2, 3, 4, 5, 6, 7, 8];
                     }
                 }
 

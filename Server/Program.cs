@@ -6,7 +6,7 @@ using ILGPU;
 using ILGPU.Runtime;
 using ILGPU.Runtime.OpenCL;
 
-namespace GpuServer
+namespace Server
 {
     class Program
     {
@@ -27,7 +27,7 @@ namespace GpuServer
             try
             {
                 // Initialize ILGPU
-                InitializeGPU();
+                InitializeGpu();
 
                 // Initialize RabbitMQ
                 var factory = new ConnectionFactory()
@@ -120,12 +120,12 @@ namespace GpuServer
             }
             finally
             {
-                CleanupGPU();
+                CleanupGpu();
                 Console.WriteLine("Serwer zatrzymany.");
             }
         }
 
-        static void InitializeGPU()
+        static void InitializeGpu()
         {
             try
             {
@@ -188,7 +188,7 @@ namespace GpuServer
             });
         }
 
-        static void CleanupGPU()
+        static void CleanupGpu()
         {
             _accelerator?.Dispose();
             _context?.Dispose();

@@ -2,3 +2,9 @@
 *.iml
 out
 gen
+.exe
+.txt
+.cache
+.dll
+.sln
+.pdb
