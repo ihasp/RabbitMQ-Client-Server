@@ -5,11 +5,11 @@ using RabbitMQ.Client.Events;
 
 namespace OpenCL_RabbitMQ
 {
-    class Program
+    public static class Client
     {
         private const string QueueName = "gpu_processing_queue";
 
-        private static async Task Main(string[] args)
+        private static async Task Main()
         {
             Console.WriteLine("=== GPU Processing Client ===");
             

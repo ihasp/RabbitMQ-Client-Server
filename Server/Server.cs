@@ -8,7 +8,7 @@ using ILGPU.Runtime.OpenCL;
 
 namespace Server
 {
-    class Program
+    public static class Server
     {
         private const string QueueName = "gpu_processing_queue";
         private static Context? _context;
@@ -20,7 +20,7 @@ namespace Server
             data[index] *= 2;
         }
 
-        static async Task Main(string[] args)
+        private static async Task Main()
         {
             Console.WriteLine("=== GPU Processing Server ===");
             
