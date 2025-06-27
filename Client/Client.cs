@@ -23,8 +23,8 @@ namespace OpenCL_RabbitMQ
                     VirtualHost = "/"
                 };
 
-                using var connection = await factory.CreateConnectionAsync();
-                using var channel = await connection.CreateChannelAsync();
+                await using var connection = await factory.CreateConnectionAsync();
+                await using var channel = await connection.CreateChannelAsync();
 
                 // Declare the main queue
                 await channel.QueueDeclareAsync(queue: QueueName, durable: false, exclusive: false, autoDelete: false);

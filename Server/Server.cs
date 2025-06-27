@@ -15,7 +15,7 @@ namespace Server
         private static Accelerator? _accelerator;
 
         // GPU Kernel - multiplies each element by 2
-        static void MultiplyKernel(Index1D index, ArrayView<int> data)
+        private static void MultiplyKernel(Index1D index, ArrayView<int> data)
         {
             data[index] *= 2;
         }
