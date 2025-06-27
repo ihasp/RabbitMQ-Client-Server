@@ -57,7 +57,7 @@ namespace OpenCL_RabbitMQ
                 await channel.BasicConsumeAsync(consumer: consumer, queue: replyQueueName, autoAck: true);
 
                 // Get input from user
-                Console.WriteLine("Podaj liczby całkowite oddzielone spacją (lub naciśnij Enter dla przykładu):");
+                Console.WriteLine("Podaj liczby całkowite oddzielone spacją:");
                 var input = Console.ReadLine();
                 
                 int[] numbers;
@@ -76,7 +76,7 @@ namespace OpenCL_RabbitMQ
                     }
                     catch
                     {
-                        Console.WriteLine("Nieprawidłowe dane, używam przykładu.");
+                        Console.WriteLine("Nieprawidłowe dane, użyto przykładu");
                         numbers = [1, 2, 3, 4, 5, 6, 7, 8];
                     }
                 }

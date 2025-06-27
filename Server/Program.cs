@@ -138,7 +138,7 @@ namespace Server
                 if (openclDevices.Length > 0)
                 {
                     _accelerator = openclDevices[0].CreateAccelerator(_context);
-                    Console.WriteLine($"Używam OpenCL GPU: {_accelerator.Name}");
+                    Console.WriteLine($"OpenCL GPU: {_accelerator.Name}");
                 }
                 else
                 {
@@ -164,7 +164,7 @@ namespace Server
         private static async Task<int[]> ProcessOnGPU(int[] input)
         {
             if (_accelerator == null)
-                throw new InvalidOperationException("GPU nie został zainicjalizowany");
+                throw new InvalidOperationException("GPU nie zostało zainicjalizowane");
 
             return await Task.Run(() =>
             {
