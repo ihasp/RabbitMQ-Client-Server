@@ -9,7 +9,7 @@ namespace OpenCL_RabbitMQ
     {
         private const string QueueName = "gpu_processing_queue";
 
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             Console.WriteLine("=== GPU Processing Client ===");
             

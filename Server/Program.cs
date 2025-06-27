@@ -38,8 +38,8 @@ namespace Server
                     VirtualHost = "/"
                 };
 
-                using var connection = await factory.CreateConnectionAsync();
-                using var channel = await connection.CreateChannelAsync();
+                await using var connection = await factory.CreateConnectionAsync();
+                await using var channel = await connection.CreateChannelAsync();
 
                 await channel.QueueDeclareAsync(queue: QueueName, durable: false, exclusive: false, autoDelete: false);
 
@@ -125,7 +125,7 @@ namespace Server
             }
         }
 
-        static void InitializeGpu()
+        private static void InitializeGpu()
         {
             try
             {
@@ -161,7 +161,7 @@ namespace Server
             }
         }
 
-        static async Task<int[]> ProcessOnGPU(int[] input)
+        private static async Task<int[]> ProcessOnGPU(int[] input)
         {
             if (_accelerator == null)
                 throw new InvalidOperationException("GPU nie został zainicjalizowany");
